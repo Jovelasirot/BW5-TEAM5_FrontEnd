@@ -54,7 +54,14 @@ const RegisterPage = () => {
   return (
     <Container className="p-5 bg-light p-2 text-dark bg-opacity-10 rounded-2 border border-light shadow ">
       <Row className="justify-content-center text-light">
-        <h2 className="text-center mb-4 ">Register</h2>
+        <h2 className="text-center mb-4 d-flex justify-content-center align-itmes-center">
+          Register{" "}
+          <img
+            src="https://uxwing.com/wp-content/themes/uxwing/download/nature-and-environment/green-energy-icon.png"
+            width={"40 px"}
+            className="ms-3"
+          />
+        </h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mt-3 text-start">
@@ -127,9 +134,11 @@ const RegisterPage = () => {
             />
           </Form.Group>
           <Button
-            variant="success"
+            variant={password ? "success" : "dark"}
             type="submit"
-            className="w-100 fw-bold shadow "
+            className={`w-100 fw-bold shadow mt-2 ${
+              password ? "" : "opacity-50"
+            }`}
           >
             REGISTER
           </Button>
