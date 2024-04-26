@@ -52,13 +52,13 @@ const RegisterPage = () => {
   };
 
   return (
-    <Container className="p-5 bg-light p-2 text-dark bg-opacity-10 rounded-2 border border-light">
+    <Container className="p-5 bg-light p-2 text-dark bg-opacity-10 rounded-2 border border-light shadow ">
       <Row className="justify-content-center text-light">
         <h2 className="text-center mb-4 ">Register</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
-          <Form.Group>
-            <Form.Label>Name</Form.Label>
+          <Form.Group className="mt-3 text-start">
+            <Form.Label x>Name</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter name"
@@ -68,7 +68,7 @@ const RegisterPage = () => {
             />
           </Form.Group>
 
-          <Form.Group>
+          <Form.Group className="mt-3 text-start">
             <Form.Label>Surname</Form.Label>
             <Form.Control
               type="text"
@@ -79,28 +79,33 @@ const RegisterPage = () => {
             />
           </Form.Group>
 
-          <Form.Group>
+          <Form.Group className="mt-3 text-start">
             <Form.Label>Username</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter username"
+              placeholder="Enter username "
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
             />
           </Form.Group>
 
-          <Form.Label className="mt-2">Role</Form.Label>
-          <Form.Control
-            as="select"
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-          >
-            <option value="ADMIN">Admin</option>
-            <option value="USER">User</option>
-          </Form.Control>
+          <Form.Group className="mt-3 text-start">
+            <Form.Label>Role</Form.Label>
+            <Form.Control
+              as="select"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+            >
+              <option value="ADMIN">Admin</option>
+              <option value="USER">User</option>
+            </Form.Control>
+          </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group
+            className="mb-3 mt-3 text-start"
+            controlId="formBasicEmail"
+          >
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
@@ -111,7 +116,7 @@ const RegisterPage = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3 text-start" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
@@ -121,8 +126,12 @@ const RegisterPage = () => {
               required
             />
           </Form.Group>
-          <Button variant="primary" type="submit" className="w-100">
-            Submit
+          <Button
+            variant="success"
+            type="submit"
+            className="w-100 fw-bold shadow "
+          >
+            REGISTER
           </Button>
         </Form>
       </Row>
