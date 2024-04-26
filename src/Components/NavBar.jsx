@@ -5,9 +5,19 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary fixed-top ">
+    <Navbar
+      expand="lg"
+      className="bg-body-tertiary fixed-top d-flex align-items-center"
+      data-bs-theme="dark"
+    >
       <Container fluid>
-        <Navbar.Brand href="#home">Epic-Energy</Navbar.Brand>
+        <Navbar.Brand href="#home" className="d-flex  align-items-center">
+          <img
+            src="https://uxwing.com/wp-content/themes/uxwing/download/nature-and-environment/green-energy-icon.png"
+            width={"40 px"}
+          />
+          <span className="ms-2">Epic-Energy </span>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
